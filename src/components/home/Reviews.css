@@ -1,0 +1,13 @@
+.reviews-section{max-width:1240px;margin:auto;padding:75px 22px}
+
+.overall-rating{display:flex;gap:5px;align-items:center;color:#e59b00;font-weight:700}
+
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+.review-card{padding:24px;border:1px solid #eee;border-radius:18px;box-shadow:0 10px 30px #00000007}
+
+.review-card p{color:#666;line-height:1.7;font-size:13px;min-height:66px}
+
+.review-card strong,.review-card small{display:block}
+
+.review-card small{color:#999;margin-top:4px}

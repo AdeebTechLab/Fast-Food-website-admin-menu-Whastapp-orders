@@ -1,0 +1,875 @@
+
+/*
+ * BiteHub responsive layer
+ * Keeps component styling intact while adding safe viewport behavior
+ * for desktop, tablet, mobile and very small screens.
+ */
+
+html, body, #root {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+}
+
+input, textarea, select, button {
+  max-width: 100%;
+}
+
+/* Large desktop / laptop */
+@media (max-width: 1200px) {
+  .hero,
+  .section,
+  .menu-page,
+  .reviews-section {
+    max-width: 1120px;
+  }
+
+  .hero {
+    gap: 30px;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 5.2vw, 66px);
+  }
+
+  .dish-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .promo {
+    margin-left: 22px;
+    margin-right: 22px;
+  }
+}
+
+/* Tablet landscape / small laptop */
+@media (max-width: 1024px) {
+  .nav-wrap {
+    padding-left: 18px;
+    padding-right: 18px;
+    gap: 14px;
+  }
+
+  .brand {
+    min-width: 135px;
+  }
+
+  .nav {
+    gap: 0;
+  }
+
+  .nav button {
+    padding: 8px 9px;
+    font-size: 13px;
+  }
+
+  .nav-actions {
+    gap: 5px;
+  }
+
+  .search-box {
+    width: 160px;
+  }
+
+  .hero {
+    padding-left: 22px;
+    padding-right: 22px;
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    gap: 20px;
+  }
+
+  .hero-food img {
+    height: min(46vw, 460px);
+  }
+
+  .features {
+    margin-left: 22px;
+    margin-right: 22px;
+  }
+
+  .admin-page-content .admin-panel {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* Tablet / large phones */
+@media (max-width: 780px) {
+  .section,
+  .reviews-section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .section-heading {
+    gap: 12px;
+  }
+
+  .section-heading h2,
+  .reviews-section h2 {
+    font-size: clamp(23px, 4vw, 30px);
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px 18px 30px;
+  }
+
+  .hero-copy {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 8vw, 55px);
+    letter-spacing: -2px;
+  }
+
+  .hero-text {
+    font-size: 15px;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+
+  .hero-actions .btn {
+    flex: 0 1 auto;
+  }
+
+  .hero-food {
+    width: 100%;
+    min-height: 0;
+  }
+
+  .hero-food img {
+    width: 100%;
+    height: min(58vw, 390px);
+    max-height: 390px;
+  }
+
+  .delivery-badge {
+    right: 10px;
+    top: 12px;
+    padding: 9px 11px;
+  }
+
+  .dish-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .review-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .contact-review-layout,
+  .checkout-layout,
+  .admin-layout,
+  .order-body {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mini-review-list {
+    grid-column: 1 / -1;
+  }
+
+  .checkout-modal {
+    width: min(680px, calc(100vw - 28px));
+    padding: 20px;
+  }
+
+  .cart-drawer {
+    width: min(430px, 92vw);
+  }
+
+  .admin-tabs {
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .admin-layout {
+    gap: 16px;
+  }
+
+  .admin-list {
+    max-height: none;
+  }
+
+  .orders-table {
+    min-width: 0;
+  }
+
+  .order-top {
+    grid-template-columns: 1fr;
+  }
+
+  .customers-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .category-admin-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .how {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .promo {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .topbar {
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 10px;
+  }
+
+  .topbar > span {
+    min-width: 0;
+  }
+
+  .nav-wrap {
+    height: 64px;
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .brand {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .brand-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    flex: none;
+  }
+
+  .brand strong {
+    font-size: 19px;
+  }
+
+  .brand small {
+    font-size: 7px;
+    letter-spacing: 1.5px;
+  }
+
+  .nav-actions {
+    flex: none;
+  }
+
+  .nav-actions > button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .mobile-toggle {
+    width: 38px;
+    height: 38px;
+    flex: none;
+  }
+
+  .nav {
+    top: 64px;
+    padding: 8px 12px 12px;
+  }
+
+  .nav button {
+    width: 100%;
+    min-height: 42px;
+    justify-content: flex-start;
+    padding: 10px 12px;
+  }
+
+  .hero {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 10vw, 46px);
+    line-height: 1.06;
+  }
+
+  .hero-text {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    gap: 8px;
+  }
+
+  .hero-actions .btn {
+    padding: 11px 14px;
+    font-size: 12px;
+  }
+
+  .hero-food img {
+    height: 300px;
+  }
+
+  .section {
+    padding: 14px 14px 34px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  .section-heading button {
+    font-size: 12px;
+  }
+
+  .dish-grid {
+    gap: 10px;
+  }
+
+  .dish-card {
+    min-width: 0;
+  }
+
+  .dish-image {
+    height: 150px;
+  }
+
+  .dish-info {
+    padding: 10px;
+  }
+
+  .dish-info h3 {
+    font-size: 13px;
+  }
+
+  .dish-info p {
+    font-size: 10px;
+    min-height: 30px;
+  }
+
+  .dish-bottom strong {
+    font-size: 14px;
+  }
+
+  .dish-bottom button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .category-grid {
+    gap: 12px 4px;
+  }
+
+  .category-card {
+    min-width: 0;
+  }
+
+  .category-large-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .category-card strong {
+    font-size: 10px;
+    text-align: center;
+  }
+
+  .category-card small {
+    font-size: 8px;
+    text-align: center;
+  }
+
+  .reviews-section {
+    padding: 48px 14px;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-card:last-child {
+    grid-column: auto;
+  }
+
+  .contact-section {
+    padding: 52px 14px;
+  }
+
+  .contact-heading h2 {
+    font-size: 28px;
+  }
+
+  .contact-review-layout {
+    gap: 14px;
+  }
+
+  .contact-side {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-review-list {
+    grid-column: auto;
+  }
+
+  .review-form {
+    padding: 18px;
+  }
+
+  .how {
+    padding: 52px 14px;
+  }
+
+  .how h2 {
+    font-size: 27px;
+  }
+
+  .promo {
+    margin: 12px 14px 40px;
+    padding: 22px;
+  }
+
+  .promo h2 {
+    font-size: 29px;
+  }
+
+  .footer {
+    padding: 42px 14px 18px;
+  }
+
+  .footer-grid {
+    gap: 24px;
+  }
+
+  .footer-bottom {
+    margin-top: 25px;
+    font-size: 9px;
+  }
+
+  .menu-page {
+    padding: 42px 14px 70px;
+  }
+
+  .menu-page-head h1 {
+    font-size: clamp(30px, 8vw, 38px);
+  }
+
+  .menu-page-head > p:last-child {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .menu-category-bar {
+    justify-content: flex-start;
+    gap: 7px;
+    margin: 24px 0;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 5px;
+    scrollbar-width: thin;
+  }
+
+  .menu-category-bar button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+
+  .results-title {
+    gap: 8px;
+  }
+
+  .results-title h2 {
+    font-size: 20px;
+  }
+
+  .results-title span {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .dish-details-modal {
+    width: calc(100vw - 20px);
+    max-height: calc(100vh - 20px);
+    border-radius: 18px;
+  }
+
+  .dish-details-modal > img {
+    height: 210px;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .dish-details-content {
+    padding: 18px;
+  }
+
+  .dish-details-content h2 {
+    font-size: 24px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-modal {
+    width: calc(100vw - 20px);
+    max-height: calc(100vh - 20px);
+    padding: 16px;
+    border-radius: 17px;
+  }
+
+  .modal-head h2 {
+    font-size: 24px;
+  }
+
+  .checkout-layout {
+    gap: 15px;
+  }
+
+  .order-summary {
+    padding: 14px;
+  }
+
+  .summary-row {
+    font-size: 11px;
+  }
+
+  .success-modal,
+  .admin-login {
+    width: calc(100vw - 28px);
+    padding: 24px 18px;
+  }
+
+  .cart-drawer {
+    width: 100%;
+    max-width: 100%;
+    padding: 18px 14px;
+  }
+
+  .cart-items {
+    margin: 14px 0;
+  }
+
+  .cart-item img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .floating-cart {
+    right: 14px;
+    bottom: max(14px, env(safe-area-inset-bottom));
+  }
+
+  .toast-message {
+    left: 12px;
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  /* Admin */
+  .admin-page-content .admin-panel {
+    padding: 18px 12px 30px;
+  }
+
+  .admin-header {
+    gap: 12px;
+  }
+
+  .admin-header h2 {
+    font-size: 22px;
+  }
+
+  .admin-header span {
+    font-size: 10px;
+    line-height: 1.4;
+    display: block;
+  }
+
+  .admin-head-actions {
+    flex: none;
+  }
+
+  .admin-head-actions .admin-logout {
+    min-width: 0;
+    padding: 0 10px;
+  }
+
+  .admin-tabs {
+    margin: 18px 0;
+    gap: 6px;
+    padding-bottom: 8px;
+  }
+
+  .admin-tabs button {
+    flex: 0 0 auto;
+    padding: 9px 11px;
+    font-size: 10px;
+  }
+
+  .admin-form,
+  .admin-data {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .admin-form h3,
+  .data-heading h3 {
+    font-size: 18px;
+  }
+
+  .admin-products-head {
+    gap: 8px;
+  }
+
+  .admin-product {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .admin-product-info {
+    min-width: 0;
+  }
+
+  .admin-product-info strong {
+    overflow-wrap: anywhere;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    flex: none;
+  }
+
+  .size-fields {
+    padding: 10px;
+  }
+
+  .size-fields-head {
+    align-items: flex-start;
+  }
+
+  .size-field-row {
+    grid-template-columns: minmax(0, 1fr) minmax(75px, 95px);
+  }
+
+  .remove-size-btn {
+    grid-column: 1 / -1;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .category-add-form {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .category-icon-input {
+    width: 100% !important;
+  }
+
+  .category-admin-list,
+  .customers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-admin-form {
+    gap: 12px;
+  }
+
+  .contact-independent-note {
+    font-size: 9px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+  .brand-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+  }
+
+  .brand strong {
+    font-size: 17px;
+  }
+
+  .brand small {
+    display: none;
+  }
+
+  .nav-actions > button {
+    width: 34px;
+    height: 34px;
+  }
+
+  .mobile-toggle {
+    width: 34px;
+    height: 34px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-food img {
+    height: 255px;
+  }
+
+  .dish-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dish-image {
+    height: 190px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 10px;
+  }
+
+  .category-large-icon {
+    width: 54px;
+    height: 54px;
+  }
+
+  .category-card strong {
+    font-size: 12px;
+  }
+
+  .category-card small {
+    font-size: 9px;
+  }
+
+  .menu-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .menu-category-bar {
+    margin-left: -2px;
+    margin-right: -2px;
+  }
+
+  .delivery-badge {
+    right: 5px;
+    top: 8px;
+    transform: scale(.9);
+    transform-origin: top right;
+  }
+
+  .admin-header {
+    align-items: flex-start;
+  }
+
+  .admin-head-actions {
+    gap: 4px;
+  }
+
+  .admin-head-actions > button:first-child {
+    width: 34px;
+    height: 34px;
+  }
+
+  .admin-head-actions .admin-logout {
+    height: 34px;
+    font-size: 10px;
+  }
+
+  .contact-admin-form input {
+    font-size: 14px;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 340px) {
+  .nav-wrap {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .brand strong {
+    font-size: 16px;
+  }
+
+  .hero {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .section,
+  .reviews-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .category-grid {
+    gap: 10px 6px;
+  }
+
+  .floating-cart {
+    width: 50px;
+    height: 50px;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .cart-drawer {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .checkout-modal,
+  .dish-details-modal {
+    width: calc(100vw - 12px);
+  }
+
+  .admin-page-content .admin-panel {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}

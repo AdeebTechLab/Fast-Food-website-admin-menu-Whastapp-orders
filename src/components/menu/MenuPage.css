@@ -1,0 +1,36 @@
+.menu-page{max-width:1240px;margin:auto;padding:65px 22px 90px;min-height:650px}
+
+.menu-page-head{text-align:center}
+
+.menu-page-head h1{font-size:43px;margin:0 0 8px}
+
+.menu-page-head>p:last-child{color:#777}
+
+.menu-category-bar{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:35px 0}
+
+.menu-category-bar button{padding:10px 15px;border:1px solid #eee;border-radius:25px;background:#fff}
+
+.menu-category-bar button.selected,.menu-category-bar button:hover{background:var(--orange);color:#fff;border-color:var(--orange)}
+
+.menu-results{margin-top:25px}
+
+.results-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+
+.results-title h2{margin:0;font-size:25px}
+
+.results-title span{color:#999;font-size:12px}
+
+.no-results{text-align:center;padding:55px;color:#888;border:1px dashed #ddd;border-radius:18px;grid-column:1/-1}
+
+@media(max-width:780px){
+.menu-page{padding-top:45px}
+}
+
+@media(max-width:520px){
+.menu-page-head h1{font-size:34px}
+.menu-category-bar{justify-content:flex-start}
+}
+
+.menu-category-bar button{display:inline-flex;align-items:center;gap:7px}
+
+.menu-category-bar button svg{flex:none}

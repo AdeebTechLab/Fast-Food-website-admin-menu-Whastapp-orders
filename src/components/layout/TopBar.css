@@ -1,0 +1,9 @@
+.topbar{height:34px;background:#181818;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 5%;font-size:12px}
+
+.topbar span{display:flex;align-items:center;gap:5px}
+
+.top-center{opacity:.9}
+
+@media(max-width:780px){
+.topbar .top-center{display:none}
+}

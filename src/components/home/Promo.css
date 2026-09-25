@@ -1,0 +1,19 @@
+.promo{max-width:1196px;margin:10px auto 65px;background:#191919;color:#fff;border-radius:26px;padding:30px 40px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+
+.promo h2{font-size:38px;margin:5px 0}
+
+.promo small{color:#bbb}
+
+.promo p{margin:0;color:#ddd}
+
+.promo button{border:1px dashed #f47b20;border-radius:14px;color:#fff;padding:15px 25px;text-align:left}
+
+.promo button b{color:var(--orange)}
+
+@media(max-width:780px){
+.promo{margin:15px 22px 45px;padding:25px;flex-wrap:wrap}
+}
+
+@media(max-width:520px){
+.promo{display:none}
+}

@@ -1,0 +1,23 @@
+.admin-login .login-icon{background:#fff0e4;color:var(--orange)}
+
+.admin-login{text-align:left;position:relative}
+
+.admin-login h2{text-align:center}
+
+.admin-login>p{text-align:center;color:#888;font-size:12px}
+
+.form-error{background:#fff0f0;color:#c33;border-radius:8px;padding:9px;font-size:11px;margin-bottom:10px}
+
+.password-field { position: relative; margin-top: 7px; }
+
+.password-field input { margin-top: 0 !important; padding-right: 43px !important; }
+
+.password-field button {
+  position: absolute; right: 5px; top: 50%; transform: translateY(-50%);
+  width: 34px; height: 34px; display: grid; place-items: center;
+  color: #777; border-radius: 8px;
+}
+
+.password-field button:hover { color: var(--orange); background: #fff2e8; }
+
+.password-field button { color:#777; }
