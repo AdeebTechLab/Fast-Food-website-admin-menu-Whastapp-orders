@@ -1,25 +1,45 @@
-
 /*
  * BiteHub responsive layer
  * Keeps component styling intact while adding safe viewport behavior
  * for desktop, tablet, mobile and very small screens.
  */
 
-html, body, #root {
+html,
+body,
+#root {
   width: 100%;
   max-width: 100%;
   min-width: 0;
 }
 
-body {
-  overflow-x: hidden;
+html {
+  scrollbar-gutter: stable;
 }
 
-img, svg, video, canvas {
+body {
+  margin: 0;
+  overflow-x: clip;
+}
+
+#root,
+.app {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+img,
+svg,
+video,
+canvas {
   max-width: 100%;
 }
 
-input, textarea, select, button {
+input,
+textarea,
+select,
+button {
   max-width: 100%;
 }
 
@@ -86,7 +106,7 @@ input, textarea, select, button {
   .hero {
     padding-left: 22px;
     padding-right: 22px;
-    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
     gap: 20px;
   }
 
@@ -176,15 +196,10 @@ input, textarea, select, button {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .reviews-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .review-card:last-child {
     grid-column: 1 / -1;
   }
 
-  .contact-review-layout,
   .checkout-layout,
   .admin-layout,
   .order-body {
@@ -419,7 +434,21 @@ input, textarea, select, button {
   }
 
   .reviews-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+
+  .review-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .review-card p,
+  .review-card strong,
+  .review-card small {
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .review-card:last-child {
@@ -435,11 +464,17 @@ input, textarea, select, button {
   }
 
   .contact-review-layout {
+    grid-template-columns: 1fr;
     gap: 14px;
   }
 
   .contact-side {
+    display: grid;
     grid-template-columns: 1fr;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .mini-review-list {
@@ -798,7 +833,7 @@ input, textarea, select, button {
   .delivery-badge {
     right: 5px;
     top: 8px;
-    transform: scale(.9);
+    transform: scale(0.9);
     transform-origin: top right;
   }
 

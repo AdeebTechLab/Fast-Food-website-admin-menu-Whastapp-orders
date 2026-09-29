@@ -1,46 +1,195 @@
-.contact-section{background:#fff8f1;padding:75px 5%}
-
-.contact-heading{text-align:center;margin-bottom:35px}
-
-.contact-heading h2{font-size:34px;margin:0 0 8px}
-
-.contact-heading>p:last-child{color:#777}
-
-.contact-review-layout{max-width:1050px;margin:auto;display:grid;grid-template-columns:1.3fr .8fr;gap:25px}
-
-.review-form{background:#fff;border:1px solid #eee;border-radius:20px;padding:28px}
-
-.review-form h3{margin:0;font-size:23px}
-
-.review-form>p{color:#888;font-size:13px;margin-bottom:22px}
-
-.contact-side{display:flex;flex-direction:column;gap:12px}
-
-.contact-card{background:#fff;border:1px solid #eee;border-radius:15px;padding:14px;display:flex;align-items:center;gap:12px}
-
-.contact-icon{width:42px;height:42px;background:#fff0e4;color:var(--orange);border-radius:12px;display:grid;place-items:center;flex:none}
-
-.contact-card>div:nth-child(2){flex:1}
-
-.contact-card strong,.contact-card span,.contact-card small{display:block}
-
-.contact-card strong{font-size:13px}
-
-.contact-card span{font-size:12px;margin-top:2px}
-
-.contact-card small{color:#999;font-size:10px;margin-top:3px}
-
-.mini-review-list{background:#fff;border:1px solid #eee;border-radius:15px;padding:15px}
-
-.mini-review-list>strong{display:block;margin-bottom:10px}
-
-.mini-review-list div{display:flex;justify-content:space-between;font-size:11px;padding:8px 0;border-top:1px solid #f1f1f1}
-
-.mini-review-list b{color:#f5a623}
-
-@media(max-width:520px){
-.contact-section{padding-left:16px;padding-right:16px}
+.contact-section {
+  background: #fff8f1;
+  padding: 75px 5%;
 }
-.field-error{display:block;color:#d34b32;font-size:10px;margin-top:5px}
-.review-form label{display:block}
-.review-form input,.review-form select,.review-form textarea{margin-top:6px}
+
+.contact-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.contact-heading h2 {
+  font-size: 34px;
+  margin: 0 0 8px;
+}
+
+.contact-heading > p:last-child {
+  color: #777;
+}
+
+.contact-review-layout {
+  max-width: 1050px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr;
+  gap: 25px;
+}
+
+.review-form {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  padding: 28px;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.review-form h3 {
+  margin: 0;
+  font-size: 23px;
+}
+
+.review-form > p {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+.contact-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.contact-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  background: #fff0e4;
+  color: var(--orange);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+
+.contact-card > div:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-card strong,
+.contact-card span,
+.contact-card small {
+  display: block;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.contact-card strong {
+  font-size: 13px;
+}
+
+.contact-card span {
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.contact-card small {
+  color: #999;
+  font-size: 10px;
+  margin-top: 3px;
+}
+
+.mini-review-list {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  padding: 15px;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mini-review-list > strong {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.mini-review-list div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  padding: 8px 0;
+  border-top: 1px solid #f1f1f1;
+}
+
+.mini-review-list b {
+  color: #f5a623;
+}
+
+@media (max-width: 520px) {
+  .contact-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .contact-review-layout {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .review-form,
+  .contact-side,
+  .contact-card,
+  .mini-review-list {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .contact-side {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .review-form input,
+  .review-form select,
+  .review-form textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  .review-form label {
+    display: block;
+    width: 100%;
+  }
+
+  .review-form textarea {
+    min-height: 110px;
+  }
+}
+.field-error {
+  display: block;
+  color: #d34b32;
+  font-size: 10px;
+  margin-top: 5px;
+}
+.review-form label {
+  display: block;
+}
+.review-form input,
+.review-form select,
+.review-form textarea {
+  margin-top: 6px;
+}

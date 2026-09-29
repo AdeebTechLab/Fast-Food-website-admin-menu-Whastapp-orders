@@ -192,10 +192,14 @@ function App() {
 
   const handleDeleteCategory = (categoryName: string) => {
     dispatch(deleteCategory(categoryName));
-    products.filter((dish) => dish.category === categoryName).forEach((dish) => {
-      dispatch(deleteProduct(dish.id));
-      cart.filter((item) => item.id === dish.id).forEach((item) => dispatch(removeFromCart(cartKey(item))));
-    });
+    products
+      .filter((dish) => dish.category === categoryName)
+      .forEach((dish) => {
+        dispatch(deleteProduct(dish.id));
+        cart
+          .filter((item) => item.id === dish.id)
+          .forEach((item) => dispatch(removeFromCart(cartKey(item))));
+      });
     if (activeCategory === categoryName) setActiveCategory("All");
     showToast(`${categoryName} category and its food items were deleted`);
   };
