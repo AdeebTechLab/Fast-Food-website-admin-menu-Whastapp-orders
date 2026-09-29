@@ -1,4 +1,49 @@
 import "./Hero.css";
 import { ArrowRight, Bike, Heart } from "lucide-react";
 
-export function Hero({ onOrder }: { onOrder: () => void }) { return <section id="home" className="hero"><div className="hero-copy"><p className="script">Delicious Food</p><h1>Delivered <span>To You</span> <Heart className="hero-heart" /></h1><p className="hero-text">Your favorite meals from top restaurants, delivered fast & fresh to your door.</p><div className="hero-actions"><button className="btn btn-orange" onClick={onOrder}>Order Now <ArrowRight size={17} /></button><button className="btn btn-light" onClick={onOrder}>Explore Menu</button></div><div className="rating"><div className="avatars">{["A", "S", "M", "R", "K"].map((x) => <span key={x}>{x}</span>)}</div><div><div className="stars">★★★★★</div><small>10K+ Happy Customers</small></div></div></div><div className="hero-food"><div className="hero-food-glow" /><img src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?auto=format&fit=crop&w=1300&q=90" alt="Chicken pasta" /><div className="delivery-badge"><Bike size={25} /><div><small>Fast Delivery</small><strong>30 mins</strong></div></div></div></section>; }
+export function Hero({ onOrder }: { onOrder: () => void }) {
+  return (
+    <section id="home" className="hero">
+      <div className="hero-copy">
+        <p className="script">Delicious Food</p>
+        <h1>
+          Delivered <span>To You</span> <Heart className="hero-heart" />
+        </h1>
+        <p className="hero-text">
+          Your favorite meals from top restaurants, delivered fast & fresh to
+          your door.
+        </p>
+        <div className="hero-actions">
+          <button className="btn btn-orange" onClick={onOrder}>
+            Order Now <ArrowRight size={17} />
+          </button>
+          <button className="btn btn-light" onClick={onOrder}>
+            Explore Menu
+          </button>
+        </div>
+        <div className="rating">
+          <div className="avatars">
+            {["A", "S", "M", "R", "K"].map((x) => (
+              <span key={x}>{x}</span>
+            ))}
+          </div>
+          <div>
+            <div className="stars">★★★★★</div>
+            <small>10K+ Happy Customers</small>
+          </div>
+        </div>
+      </div>
+      <div className="hero-food">
+        <div className="hero-food-glow" />
+        <img src="/hero%20section.png" alt="Chicken pasta" />
+        <div className="delivery-badge">
+          <Bike size={25} />
+          <div>
+            <small>Fast Delivery</small>
+            <strong>30 mins</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -4,12 +4,16 @@ import { Clock3, ShoppingCart } from "lucide-react";
 import { formatPrice, getDishSizePrice } from "../../utils/price";
 import type { Dish } from "../../types";
 
+// prettier-ignore
 export function DishCard({ dish, addToCart, onViewDetails }: { dish: Dish; addToCart: (dish: Dish, size?: string) => void; onViewDetails?: (dish: Dish) => void }) {
   const [selectedSize, setSelectedSize] = useState(dish.sizes?.[1]?.label ?? dish.sizes?.[0]?.label ?? "");
   const basePrice = getDishSizePrice(dish, selectedSize);
   const discounted = Math.max(0, basePrice * (1 - (dish.discount ?? 0) / 100));
   return <article className="dish-card">
-    <button className="dish-image" onClick={() => onViewDetails?.(dish)} aria-label={`View ${dish.name} details`}>
+    <button className="dish-image" onClick={() => {
+      if (window.matchMedia("(max-width: 780px)").matches) return;
+      onViewDetails?.(dish);
+    }} aria-label={`View ${dish.name} details`}>
       <img src={dish.image} alt={dish.name} /><span className="category-pill">{(dish.discount ?? 0) > 0 ? "HOT OFFER" : dish.category}</span>
       {dish.discount > 0 && <span className="discount-badge">{dish.discount}% OFF</span>}
     </button>
